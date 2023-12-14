@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Bootstrap Container with Card and Registration Modal</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+            $("#btnShow").click(function(){
+            $("#divChange").show();
+        });
+
+            $("#btnHide").click(function(){
+            $("#divChange").hide();
+        });
+
+            $("#btnShowModal").click(function(){
+            $("#modalTest").modal("show");
+        });
+
+            $("#btnAlert").click(function(){
+            notify();
+        });
+
+            $("#btnChangeText").click(function(){
+            var text = $("#inputText").val();
+            $("#spanText").html(text);
+        });
+
+});
+</script>
+</head>
+    <body>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                            Welcome Card
+                            </div>
+                                <div class="card-body">
+                                    <p>Welcome to my website!</p>
+                                    <p>Register user here!</p>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                    Register
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registerModalLabel">Register</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp">
+                                    <small id="nameHelp" class="form-text text-muted">Enter your full name.</small>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="section" class="form-label">Section</label>
+                                    <input type="text" class="form-control" id="section" aria-describedby="sectionHelp">
+                                    <small id="sectionHelp" class="form-text text-muted">Enter your section.</small>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-finish">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                            Welcome Card
+                            </div>
+                            <div class="card-body">
+                                <p>You have successfully registered.</p>
+                                <p>Register user here!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

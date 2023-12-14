@@ -1,0 +1,90 @@
+.Container {
+  display: flex;
+  margin: 25px;
+  margin-top: 45px;
+}
+.left-container {
+  width: 40%;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-right: 25px;
+  border-radius: 25px;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+  height: 50%;
+}
+
+.left-container-context {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.visions,
+.vision {
+  margin-top: 15%;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  text-align: center;
+}
+
+#ch {
+  display: none;
+}
+#ch:checked ~ .visions {
+  display: block;
+}
+
+#ch:checked ~ .chch {
+  display: none;
+}
+.visions {
+  display: none;
+}
+.chch {
+  text-align: center;
+  margin-bottom: 15px;
+  border-radius: 25px;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  background-color: rgb(72, 113, 97);
+  padding: 3px 13px;
+  border-radius: 3px;
+  margin-top: 12px;
+  font-size: 24px;
+}
+.right-container {
+  padding: 100px;
+  margin-bottom: 250px;
+  justify-content: center;
+  width: 65%;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  border-radius: 25px;
+  box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.38);
+}
+
+.Boxes {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 15px;
+}
+
+.cards {
+  text-align: center;
+  font-size: 12px;
+}
+
+.cards img {
+  background-color: black;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  padding: 15px;
+}
+.right-container-context {
+  align-content: center;
+
+}

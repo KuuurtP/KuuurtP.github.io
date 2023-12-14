@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Input Form</h2>
+                </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course:</label>
+                                <input type="text" class="form-control" id="course">
+                            </div>
+                            <div class="form-group">
+                                <label for="section">Section:</label>
+                                <input type="text" class="form-control" id="section">
+                            </div>
+                            <button class="btn btn-primary" id="saveRecord">Save Record</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Record Table</h2>
+                    </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Course</th>
+                                    <th>Section</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody id="recordTableBody">
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#saveRecord").click(function () {
+            var name = $("#name").val();
+            var course = $("#course").val();
+            var section = $("#section").val();
+
+            $("#recordTableBody").append("<tr>" +
+                "<td>" + name + "</td>" +
+                "<td>" + course + "</td>" +
+                "<td>" + section + "</td>" +
+                "<td><button class='btn btn-danger deleteRecord'>DELETE</button></td>" +
+                "</tr>");
+
+            $("#name").val("");
+            $("#course").val("");
+            $("#section").val("");
+        });
+
+        $("#recordTableBody").on("click", ".deleteRecord", function () {
+            $(this).closest("tr").remove();
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BootStrap - JavaScript Activity 1</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .progress {
+      height: 100px;
+      width: 50%;
+      margin: 0 auto;
+    }
+    .progress-bar {
+      font-size: 30px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .btn-group {
+      margin: 0 auto;
+      gap: 50px;
+      margin-top: 30px;
+      height: 40px;
+      width: 50%;
+    }
+    .progress-bar-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Progress Bar + Buttons with Event Listener</h1>
+  <div class="progress-bar-container">
+    <div class="progress">
+      <div class="progress-bar" style="width: 0%">0%</div>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" id="btn-33%" class="btn btn-danger">Button 1</button>
+      <button type="button" id="btn-66%" class="btn btn-danger">Button 2</button>
+      <button type="button" id="btn-100%" class="btn btn-danger">Button 3</button>
+    </div>
+  </div>
+  <script>
+    var progressBar = document.querySelector(".progress-bar");
+
+    document.getElementById("btn-33%").addEventListener("click", function() {
+      progressBar.style.width = "33%";
+      progressBar.innerHTML = "33%";
+    });
+
+    document.getElementById("btn-66%").addEventListener("click", function() {
+      progressBar.style.width = "66%";
+      progressBar.innerHTML = "66%";
+    });
+
+    document.getElementById("btn-100%").addEventListener("click", function() {           
+      progressBar.style.width = "100%";
+      progressBar.innerHTML = "100%";
+    });
+  </script>
+</body>
+</html>
